@@ -1,5 +1,5 @@
 {
-  "name": "acl2",
+  "name": "@gameleap/acl2",
   "version": "3.0.0",
   "description": "An Access Control List module based on memory, Redis, or MongoDB with Express middleware support",
   "keywords": [
@@ -8,9 +8,9 @@
     "access",
     "node"
   ],
-  "repository": "git://github.com/flash-oss/node_acl.git",
+  "repository": "git://github.com/gameleap/node_acl.git",
   "author": "Manuel Astudillo <manuel@optimalbits.com>",
-  "homepage": "https://github.com/flash-oss/node_acl",
+  "homepage": "https://github.com/gameleap/node_acl",
   "license": "MIT",
   "engines": {
     "node": ">= 12.9"

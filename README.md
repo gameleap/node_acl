@@ -1,5 +1,8 @@
 # NODE ACL - Access Control Lists for Node
 
+### This is just a fork, use the original module from [`acl2`](https://www.npmjs.com/package/acl2)
+### This may not be properly maintained and up to your specific needs!!!
+
 This module provides a minimalistic ACL implementation inspired by Zend_ACL.
 
 When you develop a website or application you will soon notice that sessions are not enough to protect all the
