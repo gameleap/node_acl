@@ -153,11 +153,16 @@ describe("acl", () => {
             acl.addUserRoles("harry", "admin", function (err) {
                 if (err) return done(err);
 
-                acl.roleUsers("admin", function (err, users) {
+                acl.addUserRoles("barry", "admin", function (err) {
                     if (err) return done(err);
-                    assert.include(users, "harry");
-                    assert.isFalse("invalid User" in users);
-                    done();
+
+                    acl.roleUsers("admin", function (err, users) {
+                        if (err) return done(err);
+                        assert.include(users, "harry");
+                        assert.include(users, "barry");
+                        assert.isFalse("invalid User" in users);
+                        done();
+                    });
                 });
             });
         });
@@ -1120,12 +1125,15 @@ describe("acl", () => {
         it("Add roles/resources/permissions", function (done) {
             var acl = new Acl(backend);
 
-            acl.allow(["role1", "role2", "role3"], ["res1", "res2", "res3"], ["perm1", "perm2", "perm3"], function (
-                err
-            ) {
-                assert.ifError(err);
-                done();
-            });
+            acl.allow(
+                ["role1", "role2", "role3"],
+                ["res1", "res2", "res3"],
+                ["perm1", "perm2", "perm3"],
+                function (err) {
+                    assert.ifError(err);
+                    done();
+                }
+            );
         });
 
         it("Add user roles and parent roles", function (done) {
